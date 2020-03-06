@@ -1,5 +1,5 @@
 require 'capybara'
-require 'capybara/ds1'
+require 'capybara/dsl'
 
 describe "Example page render unit tests" do
   it "Should show the Explore California logo" do
