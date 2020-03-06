@@ -5,4 +5,11 @@ services:
       context: .
     ports:
      - 8080:80    
+  unite-test:
+    volume:
+      - "$PWD:/app"
+    build:
+      context: .
+      dockerfile: rspec.dockerfile
+
 
