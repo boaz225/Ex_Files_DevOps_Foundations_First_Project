@@ -7,7 +7,7 @@ data "aws_iam_policy_document" "bucket_policy" {
       type = "*"
       identifiers = [ "*" ]
     }
-    resources = [ "arn:aws:s3:::explorecalifornia.org/*" ]
+    resources = [ "arn:aws:s3:::exploreinki24.org/*" ]
   }
 }
 
@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "bucket_policy" {
    says can be accessed from the .json property. */
 
 resource "aws_s3_bucket" "website" {
-  bucket = "explorecalifornia.org"  // The name of the bucket.
+  bucket = "exploreinki24.org"  // The name of the bucket.
   acl    = "public-read"            /* Access control list for the bucket.
                                        Websites need to be publicly-available
                                        to the Internet for website hosting to
