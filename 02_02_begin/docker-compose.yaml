@@ -29,7 +29,22 @@ services:
     build: 
       context: .
     ports:
-     - 8080:80    
+     - 8080:80
+  integration-tests:
+    build:
+      dockerfile: rspec.dockerfile
+      context: .
+    environment:
+      SELENIUM_HOST: selenium
+      SELENIUM_PORT: 4444
+      WEBSITE_URL: exploreinki24.org.s3-website.ap-south-1.amazonaws.com
+    volumes:
+      - "$PWD:/app"
+    entrypoint: rspec
+    command:
+      - --pattern
+      - /app/spec/integration/*_spec.rb
+
   unit-tests:
     build:
       dockerfile: rspec.dockerfile
